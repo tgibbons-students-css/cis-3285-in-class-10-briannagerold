@@ -22,16 +22,9 @@ namespace CurrencyTrader
             IEnumerable<string> tradeData = urlTDP.GetTradeData();
             List<string> newTradeData = new List<string>();
             foreach (string trade in tradeData)
-            {
-                String newTrade;
-                if (trade.Contains("GBP"))
-                {
-                    newTrade = trade.Replace("GBP", "EUR");
-                }
-                else
-                {
-                    newTrade = trade;
-                }
+            {              
+                String newTrade = trade.Replace("GBP", "EUR");
+                
                 newTradeData.Add(newTrade);
             }
 
